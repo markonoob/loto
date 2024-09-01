@@ -1,0 +1,43 @@
+
+
+<body>
+    
+  <h1>{{ title }}</h1>
+  
+  <div id="grid">
+    <table>
+      <tr *ngFor="let row of tableData">
+        <td *ngFor="let cell of row">
+          {{ cell }}
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+  <div id="stevila">
+      <p>Števila od 7 do 45</p> 
+      <input type="number"  [(ngModel)]="vrednost" min="7" max="45" required>
+      <input type="number"  [(ngModel)]="vrednost2" min="7" max="45" required>
+      <input type="number"  [(ngModel)]="vrednost3" min="7" max="45" required>
+      <input type="number"  [(ngModel)]="vrednost4" min="7" max="45" required>
+      <input type="number"  [(ngModel)]="vrednost5" min="7" max="45" required>
+      <input type="number"  [(ngModel)]="vrednost6" min="7" max="45" required>
+      <input type="number"  [(ngModel)]="vrednost7" min="7" max="45" required>
+      <button (click)="saveNumbers()">Kombiniraj</button>
+      
+
+  </div>
+  
+  <div id="grid2">
+    <table class="zbiralnik" *ngIf="stevila.length">
+      <tr *ngFor="let row of stevila" class="zbiralnik">
+        <td *ngFor="let cell of row" class="zbiralnik" >
+         {{ cell }}
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+  <router-outlet></router-outlet>
+  </body>
+  
